@@ -170,3 +170,28 @@ logger();
 const calculate = (a, b) => a + b;
 
 console.log(calculate(5, 3));
+
+/*Методы и свойства строк и чисел */
+
+const str = "teSt";
+
+console.log(str.toUpperCase());
+console.log(str.toLocaleLowerCase());
+console.log(str);
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf("fruit"));
+
+const logg = "Hello World";
+console.log (logg.slice(6, 11));
+console.log(logg.slice(6));
+console.log(logg.substring(6, 11));
+/*1й аргумент начало, второй аргумент длина */
+console.log(logg.substr(6, 3));
+
+const num5 = 12.2;
+console.log(Math.round(num5));
+
+const test2 = '12.2px';
+console.log(parseInt(test2));
+console.log(parseFloat(test2));
