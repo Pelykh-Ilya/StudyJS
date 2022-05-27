@@ -90,4 +90,3 @@ personalMovieDB.detectPersonalLevel();
 personalMovieDB.writeYourGenres();
 personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.showMyDB();
-personalMovieDB.writeYourGenres();

@@ -104,7 +104,7 @@ switch(num2) {
 let num3 = 50;
 
 while (num3 < 55) {
-    console.log(num);
+    console.log(num3);
     num3++;
 }
 
