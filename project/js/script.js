@@ -12,45 +12,105 @@
 
 5) Добавить нумерацию выведенных фильмов */
 
+/* Задания на урок №2:
+
+1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
+новый фильм добавляется в список. Страница не должна перезагружаться.
+Новый фильм должен добавляться в movieDB.movies.
+Для получения доступа к значению input - обращаемся к нему как input.value;
+P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
+
+2) Если название фильма больше, чем 21 символ - обрезать его и добавить три точки
+
+3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
+
+4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение: 
+"Добавляем любимый фильм"
+
+5) Фильмы должны быть отсортированы по алфавиту */
+
 'use strict';
 
-const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
+document.addEventListener('DOMContentLoaded', () => {
+    const movieDB = {
+        movies: [
+            "Логан",
+            "Лига справедливости",
+            "Ла-ла лэнд",
+            "Одержимость",
+            "Скотт Пилигрим против..."
+        ]
+    };
 
-// const promoAdv = document.getElementsByClassName('promo__adv');
-// for (let elem of promoAdv) {
-//     elem.remove();
-// }
+    const adv = document.querySelectorAll('.promo__adv img'),
+        promoGenre = document.querySelector('.promo__genre'),
+        promoBG = document.querySelector('.promo__bg'),
+        movieList = document.querySelector('.promo__interactive-list'),
+        addForm = document.querySelector('form.add'),
+        addInput = addForm.querySelector('.adding__input'),
+        checkBox = addForm.querySelector('[type="checkbox"]');
 
-const adv = document.querySelectorAll('.promo__adv img');
-adv.forEach(item => {
-    item.remove();
+    addForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let newFilm = addInput.value;
+        const favorite = checkBox.checked;
+
+        if (newFilm) {
+            if (newFilm.length > 21) {
+                newFilm = `${newFilm.substr(0, 21)}...`;
+            }
+            if (favorite) {
+                console.log('Добавляем любимый фильм');
+            }
+
+            movieDB.movies.push(newFilm);
+            sortArray(movieDB.movies);
+
+            createMovieList(movieDB.movies, movieList);
+        }
+
+        event.target.reset();
+    });
+
+    const deleteAdv = (arr) => {
+        arr.forEach(item => {
+            item.remove();
+        });
+    };
+
+    const makeChanges = () => {
+        promoGenre.textContent = 'ДРАМА';
+
+        promoBG.style.backgroundImage = 'url("img/bg.jpg")';
+    };
+
+    const sortArray = (arr) => {
+        arr.sort();
+    };
+
+    function createMovieList(films, parent) {
+        parent.innerHTML = "";
+        sortArray(films);
+
+        films.forEach((film, i) => {
+            parent.innerHTML += `
+        <li class="promo__interactive-item">${i + 1}. ${film}
+            <div class="delete"></div>
+        </li>`;
+        });
+
+        document.querySelectorAll('.delete').forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.remove();
+                movieDB.movies.splice(i, 1);
+
+                createMovieList(films, parent);
+            });
+        });
+    }
+
+    deleteAdv(adv);
+    makeChanges();
+    createMovieList(movieDB.movies, movieList);
 });
-
-
-const promoGenre = document.querySelector('.promo__genre');
-promoGenre.textContent = 'ДРАМА';
-
-const promoBG = document.querySelector('.promo__bg');
-promoBG.style.cssText = 'background: url(img/bg.jpg) center center/cover no-repeat';
-// promoBG.style.backgroundImage = 'url("img/bg.jpg")';
-
-const interactiveItem = document.querySelectorAll('.promo__interactive-item');
-for(let i = 0; i < movieDB.movies.length; i++) {
-    interactiveItem[i].textContent = `${i+1}. `+movieDB.movies.sort()[i];
-}
-// interactiveItem.forEach((film, i) => {
-//     interactiveItem[i].textContent = `${i+1}. ` + movieDB.movies.sort()[i];
-// }); 
-
-// Неудачная попытка нумерации, но рабочая смена тегов с неизменным содержимым))
-// const interactiveList = document.querySelector('ul.promo__interactive-list');
-// interactiveList.outerHTML = '<ol>'+interactiveList.innerHTML+'</ol>';
-// console.log(interactiveList);

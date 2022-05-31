@@ -174,7 +174,7 @@ console.log(calculate(5, 3));
 /*Методы и свойства строк и чисел */
 
 const str = "teSt";
-
+str.len
 console.log(str.toUpperCase());
 console.log(str.toLocaleLowerCase());
 console.log(str);
