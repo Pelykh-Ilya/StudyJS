@@ -35,7 +35,7 @@ btn.addEventListener('click', myAnimation);
 //     console.log('Hello World');
 //     i++;
 // }
-// /*при рекурсии setTimeout будет ждать завершения функции, в setInterval не ждет а срабатывает по времени */
+// //при рекурсии setTimeout будет ждать завершения функции, в setInterval не ждет а срабатывает по времени 
 // let id = setTimeout(function log() {
 //     console.log('Hello');
 //     id = setTimeout(log, 500);

@@ -7,7 +7,7 @@ const btns = document.querySelectorAll('button'),
 // console.log(btns[0].classList.item(0));
 // console.log(btns[1].classList.add('red', 'anotherClass'));
 // console.log(btns[0].classList.remove('blue'));
-// /* togle если есть класс - удаляет, еслинет - добавляет */
+// // togle если есть класс - удаляет, еслинет - добавляет 
 // console.log(btns[0].classList.toggle('blue'));
 
 // if (btns[1].classList.contains('red')) {
@@ -23,7 +23,7 @@ btns[0].addEventListener('click', () => {
     btns[1].classList.toggle('red');
 });
 
-/* Делигирование событий */
+// Делигирование событий 
 
 wrapper.addEventListener('click', (event) => {
     // if (event.target && event.target.tagName == "BUTTON") {

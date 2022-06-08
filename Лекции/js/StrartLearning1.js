@@ -1,6 +1,6 @@
 "use strict";
 
-// /*Объект */
+// ---------------------------Объект ---------------------------
 
 // const obj = {
 //     name: "Ilya",
@@ -11,7 +11,7 @@
 // console.log(obj.name);
 // console.log(obj['age']);
 
-// // /*Массив (array) в строгом порядке*/
+// // ---------------------------Массив (array) в строгом порядке---------------------------
 
 // let arr = ['plum.pmg', 'orange.jpg', 6, 'apple.bmp', {a: 2, b: 3}, [5, 8, 6]];
 // console.log(arr[5]);
@@ -19,7 +19,7 @@
 // const result = confirm("Are you here?");
 // console.log(result);
 
-// /*если добавить +prompt то выход не строка а число */
+// //если добавить +prompt то выход не строка а число
 
 // const answer = prompt("Вам есть 18?", "18");
 // console.log(typeof(answer));
@@ -30,11 +30,11 @@
 // console.log(typeof(answers));
 // const categories = 'toys';
 
-// /*до ES6 */
+// //до ES6
 
 // console.log('https://someuerl.com/' + categories);
 
-// /*интерполяция(Использавать ` вместо ' и ${} ) */
+// //интерполяция(Использавать ` вместо ' и ${} ) 
 
 // console.log(`https://someuerl.com/${categories}/5`);
 // const username = "Illya";
@@ -42,29 +42,29 @@
 // let incr = 10,
 //     decr = 10;
     
-// /*оператор инкримента(+1) и декримента(-1) (постфиксная форма) */
+// //оператор инкримента(+1) и декримента(-1) (постфиксная форма) 
 
 // incr++;
 // decr--;
 // console.log(incr, decr);
 
-//  /*Префиксная форма (постфиксная форма не работает)*/
+//  //Префиксная форма (постфиксная форма не работает)
 
 // console.log(++incr, --decr);
 
-// /*сравнение ==(только по значению) строгое сравнение ===(и по типу данных) */
+// //сравнение ==(только по значению) строгое сравнение ===(и по типу данных) 
 
 // console.log(2*4 == "8");
 // console.log(2*4 ==="8");
 
-// /*оператор и && оператор или || */
-// /*Оператор отрицания ! */
+// //оператор и && оператор или || 
+// //Оператор отрицания ! 
 
 // const isChecked = true,
 //       isClose = true;
 // console.log(isChecked && !isClose);
 
-// /* Условия*/
+// // ---------------------------Условия---------------------------
 
 // const num = 50;
 
@@ -75,12 +75,12 @@
 // } else {
 //     console.log(`Your number is ${num}`);
 // } 
-// /*Тернанрный оператор */
+// //Тернанрный оператор 
 
 // const num1 = 49;
 // (num1 === 50) ? console.log("Ok!") : console.log("Not ok");
 
-// /*Switch только на строгое соответствие(===) */
+// //Switch только на строгое соответствие(===) 
 
 // const num2 = 50;
 
@@ -99,7 +99,7 @@
 //         break;
 // }
 
-// /*Циклы */
+// // ---------------------------Циклы--------------------------- 
 
 // let num3 = 50;
 
@@ -114,7 +114,7 @@
 // }
 // while (num3 < 55);
 
-// /*Задаем переменную; условие ;шаг */
+// //Задаем переменную; условие ;шаг 
 // for (let i = 1; i < 8; i++) {
 //     console.log(num3);
 //     num3++;
@@ -128,8 +128,8 @@
 //     console.log(i);
 // }
 
-// /*Функции */
-// /* function declaration вызываються в любом месте кода, т.к. загружаються сразу*/
+// // ---------------------------Функции---------------------------
+// // function declaration вызываються в любом месте кода, т.к. загружаються сразу
 
 // let num4 = 20;
 
@@ -157,7 +157,7 @@
 // const anotherNum = ret();
 // console.log(anotherNum);
 
-// /* Function expression вызываеться только после обьявления*/
+// // Function expression вызываеться только после обьявления
 
 // const logger = function() {
 //     console.log("Hello World");
@@ -165,13 +165,13 @@
 
 // logger();
 
-// /* Стрелочные функции*/
+// // Стрелочные функции
 
 // const calculate = (a, b) => a + b;
 
 // console.log(calculate(5, 3));
 
-// /*Методы и свойства строк и чисел */
+// //Методы и свойства строк и чисел 
 
 // const str = "teSt";
 // str.len
@@ -186,7 +186,7 @@
 // console.log (logg.slice(6, 11));
 // console.log(logg.slice(6));
 // console.log(logg.substring(6, 11));
-// /*1й аргумент начало, второй аргумент длина */
+// //1й аргумент начало, второй аргумент длина 
 // console.log(logg.substr(6, 3));
 
 // const num5 = 12.2;
@@ -196,7 +196,7 @@
 // console.log(parseInt(test2));
 // console.log(parseFloat(test2));
 
-// /*Callback функции */
+// //Callback функции 
 
 // function first() {
 //     // do something
@@ -221,7 +221,7 @@
 //     console.log('Я прошел этот урок');
 // });
 
-// /*Обьекты */
+// //---------------------------Обьекты--------------------------- 
 
 // const options = {
 //     name: 'test',
@@ -247,8 +247,8 @@
 //     }
 // }
 
-// /*нет obj.length поэтому скитать длину только через counter или Object.keys(options) 
-// выводит массив ключей и у него есть length */
+// //нет obj.length поэтому скитать длину только через counter или Object.keys(options) 
+// выводит массив ключей и у него есть length 
 // let counter = 0; 
 // for (let key in options) {
 //     counter++;
@@ -257,12 +257,12 @@
 
 // console.log(Object.keys(options).length);
 
-// /*Деструктуризация обьекта */
+// //Деструктуризация обьекта 
 
 // const {border, bg} = options.color;
 // console.log(border);
 
-// /*Массивы (array)  */
+// //---------------------------Массивы (array)--------------------------- 
 
 // const arr1 = [1, 222, 34, 26, 8];
 // arr.sort();
@@ -294,7 +294,7 @@
 // console.log(products);
 // console.log(products.join("; "));
 
-// /*Передача по ссылке */
+// //Передача по ссылке 
 
 // let a = 5,
 //     b = a; //Передаеться значение
@@ -312,7 +312,7 @@
 // console.log(copy);
 // console.log(obj);
 
-// /*Клонирование обьекта, поверхностная копия объекта */
+// // ---------------------------Клонирование обьекта, поверхностная копия объекта---------------------------
 // function copy1(mainObj) {
 //     let objCopy = {};
 //     for(let key in mainObj) {
@@ -353,7 +353,7 @@
 // console.log(newArray);
 // console.log(oldArray);
 
-// /*Спред операторы(...) */
+// //Спред операторы(...) 
 
 // const video = ['youtube', 'vimeo', 'rutube'],
 //       blog = ['wordpress', 'livejournal', 'blogger'],
