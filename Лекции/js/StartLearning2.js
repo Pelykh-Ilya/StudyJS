@@ -213,3 +213,17 @@
 // const div = new ColoreRectangeWithText(10, 20, 'Hello', 'yelow');
 // console.log(div.calcArea());
 // div.showMyProps();
+
+// ---------------------------Rest оператор(обьеденяет отдельные элементы в массив)---------------------------
+
+const log = function (a, b, ...rest) {
+    console.log(a, b, rest);
+};
+
+log('basic', 'rest', 'operator', 'usage');
+
+function calcOrDouble(number, basis = 2) {
+    console.log(number * basis);
+}
+
+calcOrDouble(5);

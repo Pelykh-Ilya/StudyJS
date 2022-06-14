@@ -313,53 +313,53 @@
 // console.log(obj);
 
 // // ---------------------------Клонирование обьекта, поверхностная копия объекта---------------------------
-// function copy1(mainObj) {
-//     let objCopy = {};
-//     for(let key in mainObj) {
-//         objCopy[key] = mainObj[key];
-//     }
-//     return objCopy;
-// }
+function copy1(mainObj) {
+    let objCopy = {};
+    for(let key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
 
-// const numbers = {
-//     a: 2,
-//     b: 5,
-//     c: {
-//         x: 7,
-//         y: 4
-//     }
-// };
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
 
-// const newNumbers = copy1(numbers);
-// newNumbers.a = 20;
-// console.log(newNumbers);
-// console.log(numbers);
+const newNumbers = copy1(numbers);
+newNumbers.a = 20;
+console.log(newNumbers);
+console.log(numbers);
 
-// const add = {
-//     d: 17,
-//     e: 20
-// };
+const add = {
+    d: 17,
+    e: 20
+};
 
-// console.log(Object.assign(numbers, add));
+console.log(Object.assign(numbers, add));
 
-// const clone = Object.assign({}, add);
-// clone.d = 100;
-// console.log(clone);
-// console.log(add);
+const clone = Object.assign({}, add);
+clone.d = 100;
+console.log(clone);
+console.log(add);
 
-// const oldArray = ["a", "b", "c"];
-// const newArray = oldArray.slice();
-// newArray[1] = "X";
-// console.log(newArray);
-// console.log(oldArray);
+const oldArray = ["a", "b", "c"];
+const newArray = oldArray.slice();
+newArray[1] = "X";
+console.log(newArray);
+console.log(oldArray);
 
-// //Спред операторы(...) 
+//---------------------------Спред(spred) операторы(...)---------------------------
 
-// const video = ['youtube', 'vimeo', 'rutube'],
-//       blog = ['wordpress', 'livejournal', 'blogger'],
-//       internet =[...video, ...blog, 'vk', 'intagramm'];
-// console.log(internet);
+const video = ['youtube', 'vimeo', 'rutube'],
+      blog = ['wordpress', 'livejournal', 'blogger'],
+      internet =[...video, ...blog, 'vk', 'intagramm'];
+console.log(internet);
 
-// const newAaray = [...oldArray];
-// const newObj = {...numbers};
-// console.log(numbers);
+const newAaray = [...oldArray];
+const newObj = {...numbers};
+console.log(numbers);
