@@ -24,7 +24,7 @@
 // console.log(clone);
 
 
-//----------------------------Promise----------------------------
+// // ----------------------------Promise----------------------------
 
 // console.log('Запрос данных...');
 
@@ -59,21 +59,73 @@
 //     console.log('Finally');
 // });
 
-const test = time => {
-    return new Promise(resolve => {
-        setTimeout(() => resolve(), time);
-    });
+// const test = time => {
+//     return new Promise(resolve => {
+//         setTimeout(() => resolve(), time);
+//     });
+// };
+
+// // test(1000).then(() => console.log('1000 ms'));
+// // test(2000).then(() => console.log('2000 ms'));
+
+// // Promise.all ждет выполнения всех промисов и только после этого выводит результат
+// Promise.all([test(1000), test(2000)]).then(() => {
+//     console.log('ALL');
+// });
+
+// // Promise.race выполняеться когда самы первый промис сработал
+// Promise.race([test(1000), test(2000)]).then(() => {
+//     console.log('Race');
+// });
+
+//----------------------------Методы перебора массивов----------------------------
+
+// filter
+
+const names = ['Ivan', 'Anna', 'Ksenia', 'Voldemart'];
+
+const shortNames = names.filter(function(name) {
+    return name.length < 5;
+});
+
+console.log(shortNames);
+
+// map
+
+const answers = ['IvAn', 'AnnA', 'Hello'];
+
+const result = answers.map(item => item.toLowerCase());
+
+console.log(result);
+
+// every/some(возвращает true или false)
+
+const some = [4, 'qwq', 'stewrgs'];
+
+console.log(some.some(item => typeof(item) === "number"));
+console.log(some.every(item => typeof (item) === "number"));
+
+// reduce (собирать массив в одно единое целое)
+
+const arr = [4, 5, 1, 3, 2, 6];
+// после функции через запятую можно передать начальное значение
+const res = arr.reduce((sum, current) => sum + current, 21);
+console.log(res);
+
+const arr2 = ['apple', 'pear', 'plum'];
+
+const res2 = arr2.reduce((sum, curent) => `${sum}, ${curent}`, 'orange');
+console.log(res2);
+
+const obj = {
+    ivan: 'persone',
+    ann: 'persone',
+    dog: 'animal',
+    cat: 'animal'
 };
 
-// test(1000).then(() => console.log('1000 ms'));
-// test(2000).then(() => console.log('2000 ms'));
+const newArr = Object.entries(obj)
+.filter(item => item[1] == 'persone')
+.map(item => item[0]);
 
-// Promise.all ждет выполнения всех промисов и только после этого выводит результат
-Promise.all([test(1000), test(2000)]).then(() => {
-    console.log('ALL');
-});
-
-// Promise.race выполняеться когда самы первый промис сработал
-Promise.race([test(1000), test(2000)]).then(() => {
-    console.log('Race');
-});
+console.log(newArr);
