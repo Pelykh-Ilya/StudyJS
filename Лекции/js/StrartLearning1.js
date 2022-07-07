@@ -247,8 +247,8 @@
 //     }
 // }
 
-// //нет obj.length поэтому скитать длину только через counter или Object.keys(options) 
-// выводит массив ключей и у него есть length 
+// //нет obj.length поэтому считать длину только через counter или Object.keys(options) 
+// //выводит массив ключей и у него есть length 
 // let counter = 0; 
 // for (let key in options) {
 //     counter++;
@@ -264,7 +264,7 @@
 
 // //---------------------------Массивы (array)--------------------------- 
 
-// const arr1 = [1, 222, 34, 26, 8];
+// const arr = [1, 222, 34, 26, 8];
 // arr.sort();
 // console.log(arr);
 // arr.sort(compareNum);
@@ -289,28 +289,28 @@
 //     console.log(`${index}: ${item} внутри массива ${arr}`);
 // });
 
-// const str1 = prompt("", "");
+// const str = prompt("", "");
 // const products = str.split(", ");
 // console.log(products);
 // console.log(products.join("; "));
 
-// //Передача по ссылке 
+//Передача по ссылке 
 
-// let a = 5,
-//     b = a; //Передаеться значение
-// b =  b + a;
-// console.log(b);
-// console.log(a);
+let a = 5,
+    b = a; //Передаеться значение
+b =  b + a;
+console.log(b);
+console.log(a);
 
-// const obj = {
-//     a: 5,
-//     b: 1
-// };
+const obj = {
+    a: 5,
+    b: 1
+};
 
-// const copy = obj; //Передаеться ссылка на обьект
-// copy.a = 10;
-// console.log(copy);
-// console.log(obj);
+const copy = obj; //Передаеться ссылка на обьект
+copy.a = 10;
+console.log(copy);
+console.log(obj);
 
 // // ---------------------------Клонирование обьекта, поверхностная копия объекта---------------------------
 function copy1(mainObj) {
