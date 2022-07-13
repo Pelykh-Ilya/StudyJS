@@ -131,7 +131,7 @@
 // console.log(newArr);
 
 
-// Регулярные выражения
+// //----------------------------Регулярные выражения----------------------------
 
 // new RegExp('pattern', 'flags');
 // /pattern/flags;
@@ -161,3 +161,22 @@
 // const str = 'My name is R2D2';
 
 // console.log(str.match(/\w\d\w\d/i));
+
+//----------------------------Геттеры и сеттеры----------------------------
+
+const persone = {
+    name: 'Alex',
+    age: 25,
+
+    get userAge() {
+        return this.age;
+    },
+
+    set userAge(num) {
+        this.age = num;
+    }
+};
+
+console.log(persone.userAge);
+persone.userAge = 30;
+console.log(persone.userAge);
